@@ -5,6 +5,10 @@
 |05.20 - 2|CRUD 메서드 및 스토리지 관련 메서드 작성, 샘플 데이터 작성||
 |05.20 - 3|기본 레이아웃 구성 완료|내부 로직은 구현 이전|
 |05.20 - 4|CREATE 기능 작성 완료|Detail Page 및 Update, Delete 다음 단계로 진행|
+|05.20 - 5|UPDATE, DELETE 기능 및 추가 디자인 요소 적용 완료|delete-button 스타일 생성 후 적용|
+|FI|NI|SH|
+
+---
 
 # memo-practice
 
