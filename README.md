@@ -1,3 +1,8 @@
+# 진행 내역
+|날짜|내역|비고|
+|:-:|:-:|:-:|
+|05.20|초기 설정 완료|Bootstrap 및 Sass 사용|
+
 # memo-practice
 
 This template should help get you started developing with Vue 3 in Vite.
