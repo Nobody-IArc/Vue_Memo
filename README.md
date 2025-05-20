@@ -4,6 +4,7 @@
 |05.20|초기 설정 완료|Bootstrap 및 Sass 사용|
 |05.20 - 2|CRUD 메서드 및 스토리지 관련 메서드 작성, 샘플 데이터 작성||
 |05.20 - 3|기본 레이아웃 구성 완료|내부 로직은 구현 이전|
+|05.20 - 4|CREATE 기능 작성 완료|Detail Page 및 Update, Delete 다음 단계로 진행|
 
 # memo-practice
 
