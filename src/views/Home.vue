@@ -31,7 +31,7 @@ const state = reactive({
         </div>
       </div>
     </router-link>
-    <router-link to="/memos/add" class="add btn btn-light">ADD</router-link>
+    <router-link to="/memos/add" class="add btn btn-light">+ ADD</router-link>
   </div>
 </template>
 
