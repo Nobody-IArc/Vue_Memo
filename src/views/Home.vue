@@ -10,6 +10,16 @@ const state = reactive({
   memos: []
 });
 
+const remove = (id) => {
+  if(!window.confirm(`Do you want to delete?`)) {
+    return;
+  }
+
+  storageService.deleteItem(id);
+
+  state.memos = storageService.getItems();
+}
+
 // 커스텀 생성 훅
 (async function onCreated() {
   state.memos = storageService.getItems();
@@ -24,7 +34,7 @@ const state = reactive({
           <div class="d-flex justify-content-between">
             <b>{{ m.title }}</b>
             <div>
-              <span role="button">DELETE</span>
+              <span role="button" class="delete-button" @click.prevent="remove(m.id)">- DELETE</span>
             </div>
           </div>
           <div class="mt-2">{{ m.content }}</div>
@@ -55,6 +65,21 @@ const state = reactive({
     display: block;
     padding: 25px;
     border: 1px solid #eee;
+  }
+
+  .delete-button {
+    cursor: pointer;
+    color: #ff4000;
+    padding: 4px 8px;
+    border: 1px solid #ff4000;
+    border-radius: 3px;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+    font-weight: bold;
+  }
+
+  .delete-button:hover {
+    background-color: #661400;
   }
 }
 </style>

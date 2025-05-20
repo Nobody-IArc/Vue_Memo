@@ -66,7 +66,7 @@ export class StorageService {
     // 2. for 문으로 순회하며 id 값 일치하는 item 탐색 및 덮어쓰기
     for (let i = 0; i < storageData.items.length; i++) {
       if(storageData.items[i].id === item.id) {
-        storageData.items[i].item = item;
+        storageData.items[i] = item;
         break;
       }
     }

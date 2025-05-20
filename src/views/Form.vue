@@ -1,13 +1,15 @@
 <script setup>
 import { reactive } from 'vue'
 import { StorageService } from '@/services/StorageService.js'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 // 스토리지 서비스 객체
 const storageService = new StorageService('myMemo')
 
 // 라우터
-const router = useRouter()
+// 현재 URL의 정보를 가진 라우트 객체
+const route = useRoute();
+const router = useRouter();
 
 // 반응형 상태
 const state = reactive({
@@ -21,7 +23,13 @@ const state = reactive({
 // submit
 const submit = () => {
   // memo 삽입
-  storageService.addItem(state.memo)
+  // storageService.addItem(state.memo)
+
+  if(route.params.id) {
+    storageService.setItem(state.memo);
+  } else {
+    storageService.addItem(state.memo);
+  }
 
   // 알림 출력
   window.alert('저장 완료')
@@ -29,6 +37,14 @@ const submit = () => {
   // 라우터로 '/' 경로로 이동 (리다이렉트?)
   router.push({ path: '/' })
 }
+
+// 커스텀 생성 훅
+(async function onCreated() {
+  if(route.params.id) {
+    const id = Number.parseInt(route.params.id.toString());
+    state.memo = storageService.getItem(id);
+  }
+})();
 </script>
 
 <template>
